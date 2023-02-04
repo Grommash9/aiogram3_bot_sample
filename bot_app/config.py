@@ -12,10 +12,8 @@ WEB_SERVER_HOST = os.getenv('BOT_SERVER_HOST')
 WEB_SERVER_PORT = os.getenv('BOT_SERVER_PORT')
 API_ROUTE_URL = os.getenv('API_BASE_URL')
 MAIN_BOT_PATH = f"/aiogram_{cwd.name}/main"
-OTHER_BOTS_PATH = f"/aiogram_{cwd.name}/child_bot/" + "{bot_token}"
 REDIS_DSN = "redis://127.0.0.1:6379"
 
-OTHER_BOTS_URL = f"{BASE_URL}{OTHER_BOTS_PATH}"
 
 MYSQL = {
     'host': os.getenv('MYSQL_HOST'),
