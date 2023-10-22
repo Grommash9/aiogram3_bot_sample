@@ -3,13 +3,16 @@
 1. Встановіть необхідні пакети, включаючи розробницькі засоби та бібліотеки для Python 3.11:
 
    ```bash
-   sudo apt-get install python3.11-dev default-libmysqlclient-dev build-essential mysql-server -y
+   sudo apt-get install python3.11-dev default-libmysqlclient-dev build-essential mysql-server mysql-client pkg-config -y
    ```
 
 2. Створіть користувача MySQL та надайте йому доступ до локального сервера:
+    ```bash
+    mysql
+    ```
 
    ```sql
-   CREATE USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
+   ALTER USER 'root'@'localhost' IDENTIFIED WITH 'mysql_native_password' BY 'root';
    ```
 
 3. Додайте правило файерволу для дозволу доступу до порту 3306:
@@ -30,6 +33,10 @@
 
    ```bash
    bind-address = 0.0.0.0
+   ```
+
+   ```bash
+   systemctl restart mysql
    ```
 
    Зверніть увагу, що це відкриє доступ до сервера з будь-якої IP-адреси, і це може бути потенційно небезпечно.
