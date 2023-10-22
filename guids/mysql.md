@@ -3,7 +3,7 @@
 1. Встановіть необхідні пакети, включаючи розробницькі засоби та бібліотеки для Python 3.11:
 
    ```bash
-   sudo apt-get install python3.11-dev default-libmysqlclient-dev build-essential mysql-server --y
+   sudo apt-get install python3.11-dev default-libmysqlclient-dev build-essential mysql-server -y
    ```
 
 2. Створіть користувача MySQL та надайте йому доступ до локального сервера:
