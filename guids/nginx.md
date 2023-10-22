@@ -1,8 +1,9 @@
 # Під час отримання доменного імені вам слід перевірити його тут
 https://www.nslookup.io/
 
-# Якщо доменне ім'я вказує на IP-адреси Cloudflare і ви бачите логотип Cloudflare, вам не потрібно використовувати certbot
-# У вас не буде жодних даних в `/etc/nginx/sites-available/default`, тому вам слід створити віртуальний хост, що вказує на вашу локальну адресу, як це:
+## Cloudflare
+Якщо доменне ім'я вказує на IP-адреси Cloudflare і ви бачите логотип Cloudflare, вам не потрібно використовувати certbot
+У вас не буде жодних даних в `/etc/nginx/sites-available/default`, тому вам слід створити віртуальний хост, що вказує на вашу локальну адресу, як це:
 
 Адміністративна панель Django (config буде згенеровано під час встановлення за допомогою `systemd/create_and_install_systemctl_files.py`, тому вам слід просто скопіювати його сюди)
 
@@ -36,14 +37,18 @@ server {
 }
 }
 ```
-
-# Якщо домен вказує на IP-адрес вашого сервера - у вас немає Cloudflare і вам слід створити сертифікат
+# Bez Cloudflare
+Якщо домен вказує на IP-адрес вашого сервера - у вас немає Cloudflare і вам слід створити сертифікат
 `sudo apt install certbot python3-certbot-nginx`
 
 `sudo ufw allow 22`
+
 `sudo ufw allow 'Nginx Full'`
+
 `sudo ufw delete allow 'Nginx HTTP'`
+
 `sudo ufw enable`
+
 `sudo certbot --nginx -d prud-super-payment-api.telegram-crm.work`
 
 # Після створення сертифіката ви матимете запис для нього в `/etc/nginx/sites-available/default`, тому вам слід відредагувати його та змінити локалі або додати інструкцію include!
