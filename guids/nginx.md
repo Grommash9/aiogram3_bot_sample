@@ -39,7 +39,8 @@ server {
 ```
 # Bez Cloudflare
 Якщо домен вказує на IP-адрес вашого сервера - у вас немає Cloudflare і вам слід створити сертифікат
-`sudo apt install certbot python3-certbot-nginx`
+
+`sudo apt install certbot python3-certbot-nginx -y`
 
 `sudo ufw allow 22`
 
