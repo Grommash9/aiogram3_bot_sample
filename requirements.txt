@@ -39,3 +39,4 @@ types-pyOpenSSL==23.2.0.2
 types-redis==4.6.0.7
 typing_extensions==4.7.1
 yarl==1.9.2
+-e ./local_extensions
